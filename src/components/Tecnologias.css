@@ -1,0 +1,87 @@
+.tecnologias {
+  padding: 60px 16px;
+  background-color: #f8efc7;
+  text-align: center;
+}
+
+.tecnologias h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #201f1e;
+}
+
+.tecnologias-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.tecnologia {
+  background: white;
+  border-radius: 8px;
+  padding: 5px ;
+  width: 30%;
+  max-width: 90px;
+  min-width: 50px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tecnologia:hover {
+  transform: scale(1.05);
+}
+
+.tecnologia img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.tecnologia p {
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+/* MOBILE AJUSTADO */
+@media (max-width: 768px) {
+  .tecnologia {
+    width: 30%;
+  }
+}
+
+@media (max-width: 600px) {
+  .tecnologias-grid {
+    gap: 10px;
+  }
+
+  .tecnologia {
+    width: 30%;
+    padding: 8px 2px;
+  }
+
+  .tecnologia img {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 6px;
+  }
+
+  .tecnologia p {
+    font-size: 0.6rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .tecnologia {
+    width: 47%;
+  }
+}

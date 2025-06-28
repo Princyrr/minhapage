@@ -1,0 +1,185 @@
+.ofertas {
+  background-color: #201f1e;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.ofertas h2 {
+  font-size: 2rem;
+  color: #ee841a;
+  margin-bottom: 20px;
+}
+
+/* LINHA DE EXEMPLOS */
+.exemplos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  margin-top: 50px;
+}
+
+.exemplos span {
+  background: #f15800;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* CARD PADRÃO */
+.card {
+  position: relative;
+  background: #f8efc7;
+  border: 2px solid #f15800;
+  border-radius: 10px;
+  width: 250px;      /* antes: 280px */
+  padding: 20px 15px 30px;
+  box-shadow: 0 8px 20px rgba(245, 102, 20, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(255, 140, 0, 0.7);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 15px 30px rgba(255, 140, 0, 0.7); }
+  50% { box-shadow: 0 15px 40px rgba(255, 140, 0, 1); }
+}
+
+/* Ícones */
+.card .icone {
+  font-size: 2.1rem;
+  margin-bottom: 15px;
+}
+
+/* Ícones maiores e cores por plano */
+.card:nth-child(1) .icone {
+  color: #f15800; /* básico laranja */
+  font-size: 3.2rem;
+}
+.card:nth-child(2) .icone {
+  color: #ee841a; /* intermediário amarelo */
+  font-size: 3.8rem;
+}
+.card:nth-child(3) .icone {
+  color: #ffc107; /* premium dourado */
+  font-size: 4rem;
+}
+
+/* Título e preço */
+.card h3 {
+  color: #201f1e;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.card .preco {
+  color: #f15800;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Lista com bolinha */
+.card ul {
+  list-style: inside disc;
+  text-align: left;
+  padding-left: 20px;
+  margin-bottom: 25px;
+  color: #333;
+  font-weight: 600;
+}
+
+.card ul li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+/* Botão WhatsApp */
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(45deg, #f15800, #ff8c00);
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 30px;
+  box-shadow: 0 4px 12px rgba(255, 140, 0, 0.5);
+  transition: background 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  background: linear-gradient(45deg, #ff8c00, #f15800);
+  box-shadow: 0 6px 18px rgba(255, 140, 0, 0.8);
+}
+
+/* Selo "Mais Popular" para o plano intermediário */
+.card:nth-child(2)::before {
+  content: "Mais Popular";
+  position: absolute;
+  top: -12px;
+  right: 10px;
+  background: #ee841a;
+  color: #201f1e;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  box-shadow: 0 2px 8px rgba(238, 132, 26, 0.7);
+  z-index: 10;
+}
+
+/* Gradiente para o card premium */
+.card:nth-child(3) {
+  background: linear-gradient(135deg, #ffd54f, #ffb300);
+  color: #201f1e;
+  border-color: #ffc107;
+  box-shadow: 0 8px 25px rgba(255, 193, 7, 0.6);
+}
+
+.card:nth-child(3) h3,
+.card:nth-child(3) .preco,
+.card:nth-child(3) ul li {
+  color: #201f1e;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 260px;
+  }
+
+  .ofertas h2 {
+    font-size: 1.7rem;
+  }
+
+  .exemplos {
+    font-size: 0.9rem;
+  }
+}

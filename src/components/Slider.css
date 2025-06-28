@@ -1,0 +1,157 @@
+.slider {
+  background-color: #201f1e;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.slider-title {
+  font-size: 2rem;
+  font-weight: bold;
+  background: linear-gradient(270deg, #f15800, #f9fd0b, #d67d09,#ffbf47,#f0a35b);
+  background-size: 600% 600%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 5s ease infinite;
+  margin-bottom: 30px;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.slider-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+}
+
+.slide-unico {
+  width: 90%;
+  max-width: 700px;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+}
+
+.slide-unico img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
+.seta {
+  background: transparent;
+  border: none;
+  color: #f15800;
+  font-size: 2.2rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.seta:hover {
+  transform: scale(1.2);
+  color: #ff8c00;
+}
+
+.seta-esquerda {
+  margin-right: 10px;
+}
+
+.seta-direita {
+  margin-left: 10px;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-conteudo {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+  position: relative;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  text-align: center;
+}
+
+.modal-conteudo img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.modal-fechar {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #f15800;
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  padding: 6px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* MOBILE: deixar o modal menor */
+@media (max-width: 600px) {
+  .modal-conteudo {
+    width: 85%;
+    max-width: 320px;
+    padding: 16px;
+  }
+
+  .modal-conteudo img {
+    max-height: 220px;
+    object-fit: contain;
+  }
+
+  .modal-fechar {
+    font-size: 1rem;
+    padding: 4px 8px;
+  }
+}
+
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .slide-unico {
+    height: 180px; /* altura menor pra ficar retangular */
+  }
+
+  .slider-title {
+    font-size: 1.5rem;
+  }
+
+  .seta {
+    font-size: 1rem;
+  }
+}
