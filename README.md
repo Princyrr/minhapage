@@ -1,6 +1,7 @@
 # Portfólio da Priscila Ramonna
 
-![minhatela](./minhatela.png)
+![Tela do site](src/assets/minhatela.png)
+
 
 ## Sobre o Projeto
 
