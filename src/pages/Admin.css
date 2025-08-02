@@ -1,0 +1,160 @@
+.admin-wrapper {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.admin-wrapper h1,
+.admin-wrapper h2 {
+  color: #f15800;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.admin-form label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.admin-form input[type="password"],
+.admin-form textarea,
+.admin-form input[type="file"] {
+  width: 100%;
+  margin-top: 5px;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  box-sizing: border-box;
+  background-color: #fff; /* força fundo claro */
+  color: #000;
+}
+
+.admin-form button {
+  margin-top: 20px;
+  background-color: #f15800;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.admin-form button:hover:not(:disabled) {
+  background-color: #d44900;
+}
+
+.admin-form button:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+
+.admin-message {
+  margin-top: 10px;
+  text-align: center;
+  color: green;
+  font-weight: bold;
+}
+
+/* Estilo do post no admin */
+.admin-post {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 8px;
+  background: #fff;
+  color: #000;
+}
+
+.admin-post img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.admin-post small {
+  display: block;
+  margin-top: 10px;
+  color: #555;
+}
+
+.admin-post p,
+.admin-post span,
+.admin-post h3,
+.admin-post div {
+  color: #000;
+}
+
+/* Botão para deletar posts */
+.admin-post button {
+  margin-top: 10px;
+  background: red;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.admin-post button:hover {
+  background: #b30000;
+}
+
+/* Container dos comentários no admin */
+.admin-comments {
+  margin-top: 15px;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+  
+}
+
+/* Comentário individual */
+.admin-comment {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9f9f9;
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: #222;
+}
+
+/* Botão para deletar comentário */
+.admin-btn-delete {
+  background: #f15800;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background-color 0.3s ease;
+}
+
+.admin-btn-delete:hover {
+  background: #b32b2b;
+}
+
+.comentario-pendente {
+  background-color: #fff3cd;
+  border-left: 4px solid #ffc107;
+  padding: 8px;
+  margin: 6px 0;
+  border-radius: 4px;
+}
+
+.admin-btn-approve {
+  background-color: #28a745;
+  color: white;
+  margin-left: 80px;
+  padding: 4px 8px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}

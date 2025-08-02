@@ -1,4 +1,9 @@
+import { useEffect } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import './Tecnologias.css'
+
+gsap.registerPlugin(ScrollTrigger)
 
 const tecnologias = [
   { nome: 'HTML5', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
@@ -25,6 +30,24 @@ const tecnologias = [
 ]
 
 const Tecnologias = () => {
+  useEffect(() => {
+    gsap.fromTo(".tecnologia",
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        stagger: 0.15,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".tecnologias",
+          start: "top 80%",
+          toggleActions: "play none none none"
+        }
+      }
+    )
+  }, [])
+
   return (
     <section className="tecnologias">
       <h2>Tecnologias que utilizo</h2>

@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { FaPhoneAlt, FaMapMarkerAlt, FaEnvelope, FaWhatsapp } from 'react-icons/fa'
 import './Contato.css'
+import contatoImg from '../assets/contato.png'
+
 
 const Contato = () => {
   const [nome, setNome] = useState('')
@@ -26,7 +28,10 @@ const Contato = () => {
   }
 
   return (
-    <main className="contato">
+    <main  className="contato contato-animado">
+<img src={contatoImg} alt="Imagem de contato" className="imagem-contato" />
+
+
       <h2>Entre em Contato</h2>
 
       <form onSubmit={handleSubmit} className="form-contato">

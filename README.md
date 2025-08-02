@@ -7,7 +7,7 @@
 
 Este é meu portfólio pessoal desenvolvido com React e outras tecnologias web modernas. Nele, apresento minhas habilidades como desenvolvedora web e mobile, meus projetos, experiência e contato.
 
-Link para o projeto online: [https://priscilaramonna.netlify.app](https://priscilaramonna.netlify.app)
+## Link para o projeto online: [https://priscilaramonna.netlify.app](https://priscilaramonna.netlify.app)
 
 ---
 

@@ -4,11 +4,12 @@
   color: #f15800;
   text-align: center;
   border-top: #f15800 2px solid;
+  overflow-x: hidden;
 }
 
 .logo-footer {
   height: 50px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   filter: brightness(0) saturate(100%) invert(38%) sepia(60%) saturate(2339%) hue-rotate(1deg) brightness(91%) contrast(91%);
 }
 
@@ -18,6 +19,8 @@
   gap: 20px;
   font-size: 24px;
   margin-bottom: 20px;
+  animation: moveIcons 4s ease-in-out infinite alternate;
+  will-change: transform;
 }
 
 .social-icons a {
@@ -28,6 +31,18 @@
 .social-icons a:hover {
   transform: scale(1.2);
   color: #ff8c00;
+}
+
+@keyframes moveIcons {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px); /* Vai pra direita */
+  }
+  100% {
+    transform: translateX(-20px); /* Volta pra esquerda */
+  }
 }
 
 .footer-nav {
@@ -60,6 +75,41 @@
   box-sizing: border-box;
 }
 
+.footer-slogan {
+  margin: 10px 0;
+  font-size: 12px;
+  color: #f3d9c1;
+  text-align: center;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.footer-contact {
+  text-align: center;
+  margin: 20px 0;
+  color: #f3d9c1;
+}
+
+.footer-contact h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.footer-contact p {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+.footer-contact a {
+  color: #eb6b21;
+  text-decoration: none;
+}
+
+.footer-contact a:hover {
+  text-decoration: underline;
+}
 
 /* Responsivo */
 @media (max-width: 600px) {

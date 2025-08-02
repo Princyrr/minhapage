@@ -1,9 +1,10 @@
 import './QuemSomos.css'
 import euImg from '../assets/eu.png'
+import ServicosWeb from '../components/ServicosWeb'
 
 const QuemSomos = () => {
   return (
-    <main className="quem-somos">
+    <main className="quem-somos quem-somos-animado">
       <div className="quem-somos-container">
         <img src={euImg} alt="Priscila Ramonna" className="foto-eu" />
         <div className="quem-somos-texto">
@@ -24,7 +25,9 @@ const QuemSomos = () => {
             Acesse e conheça meu trabalho: <a href="https://github.com/Princyrr" target="_blank" rel="noopener noreferrer">github.com/Princyrr</a>
           </p>
         </div>
+
       </div>
+      <ServicosWeb />
     </main>
   )
 }

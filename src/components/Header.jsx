@@ -47,8 +47,8 @@ const Header = () => {
 
   return (
     <>
-      <div className={`social-bar ${scrolled ? 'scrolled' : ''}`}>
-        <a href="https://www.linkedin.com/in/priscila-pires-171617128/" target="_blank" rel="noreferrer"><FaLinkedin /></a>
+      <div className={`social-bar ${scrolled ? 'hide' : ''}`}>
+        <a href="https://www.linkedin.com/in/priscila-ramonna-171617128/" target="_blank" rel="noreferrer"><FaLinkedin /></a>
         <a href="https://github.com/Princyrr" target="_blank" rel="noreferrer"><FaGithub /></a>
         <a href="https://www.instagram.com/priscilarpiress" target="_blank" rel="noreferrer"><FaInstagram /></a>
         <a href="https://www.facebook.com/share/16TaH6yeDB" target="_blank" rel="noreferrer"><FaFacebook /></a>
@@ -56,7 +56,9 @@ const Header = () => {
 
       <header className={`header ${scrolled ? 'scrolled' : ''}`}>
         <div className="header-container">
-          <img src={logo} alt="Logo" className="logo" />
+          <Link to="/" onClick={handleLinkClick}>
+            <img src={logo} alt="Logo" className="logo" />
+          </Link>
 
           <button className="menu-toggle" onClick={toggleMenu} aria-label="Toggle menu">
             <div className={`bar ${menuOpen ? 'open' : ''}`}></div>
@@ -65,9 +67,34 @@ const Header = () => {
           </button>
 
           <nav ref={navRef} className={menuOpen ? 'open' : ''}>
-            <Link onClick={handleLinkClick} className={location.pathname === '/' ? 'ativo' : ''} to="/">Home</Link>
-            <Link onClick={handleLinkClick} className={location.pathname === '/quem-somos' ? 'ativo' : ''} to="/quem-somos">Quem Somos</Link>
-            <Link onClick={handleLinkClick} className={location.pathname === '/contato' ? 'ativo' : ''} to="/contato">Contato</Link>
+            <Link
+              onClick={handleLinkClick}
+              className={location.pathname === '/' ? 'ativo' : ''}
+              to="/"
+            >
+              Home
+            </Link>
+            <Link
+              onClick={handleLinkClick}
+              className={location.pathname === '/quem-somos' ? 'ativo' : ''}
+              to="/quem-somos"
+            >
+              Quem Somos
+            </Link>
+            <Link
+              onClick={handleLinkClick}
+              className={location.pathname === '/contato' ? 'ativo' : ''}
+              to="/contato"
+            >
+              Contato
+            </Link>
+            <Link
+              onClick={handleLinkClick}
+              className={location.pathname === '/blog' ? 'ativo' : ''}
+              to="/blog"
+            >
+              Blog
+            </Link>
           </nav>
         </div>
       </header>
@@ -76,4 +103,3 @@ const Header = () => {
 }
 
 export default Header
-

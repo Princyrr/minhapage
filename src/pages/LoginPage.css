@@ -1,0 +1,97 @@
+/* Fundo com gradiente */
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #facb95, #f8efc7);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+}
+
+/* Caixa do formulário */
+.login-box {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Título */
+.login-box h1 {
+  margin-bottom: 30px;
+  color: #333;
+  font-weight: 700;
+  font-size: 2.2rem;
+}
+
+/* Formulário */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  text-align: left;
+}
+
+/* Label */
+.login-form label {
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 6px;
+  display: block;
+}
+
+/* Input */
+.login-form input {
+  padding: 12px 15px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: #f5750c;
+  box-shadow: 0 0 8px #fc950eaa;
+}
+
+/* Botão */
+.btn-login {
+  background-color: #201f1e;
+  color: white;
+  padding: 14px 0;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-login:hover {
+  background-color: #ffb067;
+}
+
+/* Mensagem de erro */
+.login-message {
+  margin-top: 15px;
+  color: #d93025;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .login-box {
+    padding: 30px 20px;
+  }
+
+  .login-box h1 {
+    font-size: 1.8rem;
+  }
+}

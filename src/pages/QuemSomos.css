@@ -2,7 +2,7 @@
   padding: 60px 20px;
   background-color: #f8efc7;
   color: #201f1e;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .quem-somos-container {
@@ -17,8 +17,13 @@
 
 .foto-eu {
   width: 250px;
-  border-radius: 10px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%; /* redonda */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+   opacity: 0;
+  transform: translateX(-50px);
+  animation: slideIn 1s forwards;
 }
 
 .quem-somos-texto {
@@ -30,12 +35,46 @@
   font-size: 2rem;
   margin-bottom: 20px;
   color: #f15800;
+   filter: blur(8px);
+  opacity: 0;
+  animation: blurIn 1s forwards;
+  animation-delay: 0.5s;
 }
 
 .quem-somos-texto p {
   font-size: 1rem;
   line-height: 1.6;
+    opacity: 0;
+  transform: translateX(-30px);
+  animation: slideInText 1s forwards;
 }
+.quem-somos-texto p:nth-of-type(1) { animation-delay: 0.8s; }
+.quem-somos-texto p:nth-of-type(2) { animation-delay: 1s; }
+.quem-somos-texto p:nth-of-type(3) { animation-delay: 1.2s; }
+.quem-somos-texto p:nth-of-type(4) { animation-delay: 1.4s; }
+.quem-somos-texto p:nth-of-type(5) { animation-delay: 1.6s; }
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes blurIn {
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes slideInText {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 
 .quem-somos-texto a {
   color: #f15800;
@@ -51,4 +90,19 @@
 
 .quem-somos-texto a:visited {
   color: #f15800;
+}
+/* mobile */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.quem-somos-animado {
+  animation: fadeUp 0.8s ease-out forwards;
 }

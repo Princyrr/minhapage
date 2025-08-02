@@ -1,45 +1,72 @@
 .banner {
-  display: flex;
+  position: relative;
   background-color: #201f1e;
   color: white;
-  padding: 2rem 4rem;
-  margin-top: 120px; /* compensa header fixo */
-  min-height: 300px;
+  margin-top: 90px;
+  transition: margin-top 0.3s ease;
+  min-height: 71vh;
+  width: 100%;
+  padding: 4rem 2rem;
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
-  width: 100%; /* largura total da viewport */
+  text-align: center;
   box-sizing: border-box;
+  overflow: hidden;
+}
+
+.banner.scrolled {
+  margin-top: 60px; /* ou menor, para subir quando o header está fixo no topo */
 }
 
 .banner-image {
-  flex: 1;
-  display: flex;
-  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 500px;
+  
+
+  height: 100%;
+  z-index: 0;
+  opacity: 0;
+  transform: translateX(-100px);
+  animation: slideIn 1s forwards;
 }
 
 .banner-image img {
-  max-width: 100%;
-  max-height: 300px;
-  border-radius: 10px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   animation: float 6s ease-in-out infinite;
+  filter: brightness(0.4); /* escurece p/ contraste com texto */
 }
 
 .banner-text {
-  flex: 1;
-  max-width: 600px;
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
 }
 
 .banner-text h2 {
   margin-bottom: 1rem;
-  font-size: 1.8rem;
+  font-size: 2.5rem;
   color: #F15800;
+  filter: blur(8px);
+  opacity: 0;
+  animation: blurIn 3s forwards;
+  animation-delay: 0.7s;
 }
 
 .banner-text p {
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.6;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideIn 2s forwards;
+  animation-delay: 2s;
+}
+
+.banner-text p:nth-of-type(2) {
+  animation-delay: 2.5s;
 }
 
 /* Animação flutuar */
@@ -52,21 +79,62 @@
   }
 }
 
-/* Mobile - empilha e centraliza */
+@keyframes slideIn {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes blurIn {
+  to {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+/* Mobile */
 @media (max-width: 768px) {
   .banner {
     flex-direction: column;
     padding: 2rem 1rem;
+    margin-top: 60px;
     min-height: auto;
-    text-align: center;
-    width: 100%;
   }
 
-  .banner-text, .banner-image {
-    max-width: 100%;
+  .banner-image {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: auto;
+    opacity: 2.0;
+    transform: none;
+    animation: none;
+    margin-bottom: 1rem;
   }
 
   .banner-image img {
-    max-height: 250px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: brightness(0.7);
+  }
+
+  .banner-text {
+    max-width: 100%;
+    z-index: 1;
+    padding: 0 10px;
+  }
+
+  .banner-text h2 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .banner-text p {
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: center;
   }
 }

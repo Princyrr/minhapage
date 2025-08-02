@@ -1,9 +1,20 @@
-import bannerImg from '../assets/banner.png'
-import './Banner.css'
+import React, { useState, useEffect } from 'react';
+import bannerImg from '../assets/inicial.png';
+import './Banner.css';
 
 const Banner = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <section className="banner">
+    <section className={`banner ${scrolled ? 'scrolled' : ''}`}>
       <div className="banner-image">
         <img src={bannerImg} alt="Banner" />
       </div>
@@ -19,8 +30,7 @@ const Banner = () => {
         </p>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Banner
-
+export default Banner;

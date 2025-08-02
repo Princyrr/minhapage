@@ -22,6 +22,8 @@ const Slider = () => {
     <>
       <section className="slider">
         <h2 className="slider-title">Alguns Projetos:</h2>
+       <p className="projetos">Você encontra meus projetos no meu GitHub</p>
+
         <div className="slider-content">
           <button className="seta seta-esquerda" onClick={anterior}>
             <FaChevronLeft />
